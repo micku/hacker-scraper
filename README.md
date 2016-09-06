@@ -1,6 +1,42 @@
 # Hacker Scraper
 This is a simple CLI applications that scrapes data from [Hacker News](https://news.ycombinator.com/).
 
+### Output format
+
+```json
+[
+    {
+        "title": "Web Scraping in 2016",
+        "uri": "https://franciskim.co/2016/08/24/dont-need-no-stinking-api-web-scraping-2016-beyond/",
+        "author": "franciskim",
+        "points": 133,
+        "comments": 80,
+        "rank": 1
+    },
+    {
+        "title": "Instapaper is joining Pinterest",
+        "uri": "http://blog.instapaper.com/post/149374303661",
+        "author": "ropiku",
+        "points": 182,
+        "comments": 99,
+        "rank": 2
+    }
+]
+```
+
+### Input arguments
+The application takes only one optional value:
+
+- `--posts` how many posts to print. A positive integer <= 100.
+
+Default value for `--posts` is `10`.
+
+```
+hacker_scraper --posts n
+```
+
+
+
 ## Installation
 The application can run under [Docker](https://www.docker.com/), here are the instructions to get it to work.
 
