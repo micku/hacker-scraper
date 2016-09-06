@@ -7,7 +7,7 @@ The application can run under [Docker](https://www.docker.com/), here are the in
 1. [Install Docker](https://docs.docker.com/engine/installation/#installation)
 2. Pull the Python image `docker pull python`
 3. Build the container: `docker build -t hacker_scraper .`
-4. Run it: `docker run -it --rm --name hacker-scraper hacker_scraper`
+4. Run it: `docker run -t --rm hacker_scraper python hacker_scraper.py --posts 20`
 
 ## External dependencies
 * [Click](http://click.pocoo.org/6/): CLI dedicated package that is really useful to keep code clean and don't reinvent the wheel

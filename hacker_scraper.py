@@ -4,8 +4,9 @@ import click
 
 
 @click.command()
-def hacker_scraper():
-    click.echo('Here comes click')
+@click.option('--posts', default=10, help='Number of posts to scrape.')
+def hacker_scraper(posts):
+    click.echo('Number of posts: {}'.format(posts))
 
 
 if __name__ == '__main__':
