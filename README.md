@@ -45,5 +45,13 @@ The application can run under [Docker](https://www.docker.com/), here are the in
 3. Build the container: `docker build -t hacker_scraper .`
 4. Run it: `docker run -t --rm hacker_scraper python hacker_scraper.py --posts 20`
 
+## Testing
+Testing is implemente with standard library's unittest framework.  
+Test execution should be done in the Docker container:  
+
+```
+docker run -t --rm hacker_scraper python -m unittest discover -s tests
+```
+
 ## External dependencies
 * [Click](http://click.pocoo.org/6/): CLI dedicated package that is really useful to keep code clean and don't reinvent the wheel
