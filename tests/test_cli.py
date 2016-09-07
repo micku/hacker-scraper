@@ -10,39 +10,39 @@ class TestCli(unittest.TestCase):
         runner = CliRunner()
 
         result = runner.invoke(hacker_scraper, ['--posts', ])
-        assert result.exit_code >= 0
+        self.assertGreaterEqual(result.exit_code, 0)
 
         result = runner.invoke(hacker_scraper, ['--no', ])
-        assert result.exit_code == 2
+        self.assertEqual(result.exit_code, 2)
 
         result = runner.invoke(hacker_scraper, [0, ])
-        assert result.exit_code == -1
+        self.assertEqual(result.exit_code, -1)
 
 
     def test_input_posts_int(self):
         runner = CliRunner()
 
         result = runner.invoke(hacker_scraper, ['--posts', ])
-        assert result.exit_code == 2
+        self.assertEqual(result.exit_code, 2)
 
         result = runner.invoke(hacker_scraper, ['--posts', 'err', ])
-        assert result.exit_code == 2
+        self.assertEqual(result.exit_code, 2)
 
         result = runner.invoke(hacker_scraper, ['--posts', '1', ])
-        assert result.exit_code == 0
+        self.assertEqual(result.exit_code, 0)
 
 
     def test_input_posts_range(self):
         runner = CliRunner()
 
         result = runner.invoke(hacker_scraper, ['--posts', '-1', ])
-        assert result.exit_code == 2
+        self.assertEqual(result.exit_code, 2)
 
         result = runner.invoke(hacker_scraper, ['--posts', '101', ])
-        assert result.exit_code == 2
+        self.assertEqual(result.exit_code, 2)
 
         result = runner.invoke(hacker_scraper, ['--posts', '50.2', ])
-        assert result.exit_code == 2
+        self.assertEqual(result.exit_code, 2)
 
         result = runner.invoke(hacker_scraper, ['--posts', '50', ])
-        assert result.exit_code == 0
+        self.assertEqual(result.exit_code, 0)
