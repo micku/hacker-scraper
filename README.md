@@ -55,3 +55,5 @@ docker run -t --rm hacker_scraper python -m unittest discover -s tests
 
 ## External dependencies
 * [Click](http://click.pocoo.org/6/): CLI dedicated package that is really useful to keep code clean and don't reinvent the wheel
+* [requests](http://docs.python-requests.org/en/master/): Pythonic way to handle requests
+* [BeautifulSoup](https://www.crummy.com/software/BeautifulSoup/): Reads HTML and transforms in Python objects
