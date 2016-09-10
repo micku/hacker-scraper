@@ -5,7 +5,7 @@ from hacker_scraper import only_numbers
 import unittest
 
 
-class TestOutput(unittest.TestCase):
+class TestOnlyNumbers(unittest.TestCase):
     def test_cases(self):
         cases = {
             '123': 123,
